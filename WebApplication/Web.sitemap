@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<siteMap xmlns="http://schemas.microsoft.com/AspNet/SiteMap-File-1.0" >
+  <siteMapNode url="~/Default.aspx" title="Main Page"  description="">
+    <siteMapNode url="~/Teacher/Home.aspx" title="Teacher"  description="" >
+      <siteMapNode url="~/Teacher/Creation.aspx" title="Student Account Creation"  description="" />
+      <siteMapNode url="~/Teacher/Management.aspx" title="Management of the Assignments"  description="" />
+      <siteMapNode url="~/Teacher/Marking.aspx" title="Assignment marking"  description="" />
+    </siteMapNode>
+    <siteMapNode url="~/Student/Home.aspx" title="Student"  description="" >
+      <siteMapNode url="~/Student/Submission.aspx" title="Assignment Submission"  description="" />
+      <siteMapNode url="~/Student/Summary.aspx" title="Summary of the Assignments"  description="" />
+    </siteMapNode>
+  </siteMapNode>
+</siteMap>

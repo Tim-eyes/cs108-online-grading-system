@@ -1,0 +1,98 @@
+<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="MasterPage"%>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=GBK" />
+    <title>Online Grading System</title>
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <link href="/style/site.css" rel="stylesheet" type="text/css" />
+  
+    <style type="text/css">
+   
+        .auto-style1 {
+            width: 1200px;
+        }
+   
+        .auto-style2 {
+            margin-left: 40px;
+        }
+   
+        </style>
+</head>
+<body style="text-align: center;">
+    <form id="form1" runat="server">
+        <div>
+            <div id="headDiv" style="height: 134px">
+            
+            <div id="login">
+                <p class="auto-style2">
+                <span style="color: #ffffff">Welcome<br />
+                <asp:LoginView ID="HeadLoginView" runat="server">
+                    <AnonymousTemplate>
+                        [ <a href="~/Log.aspx" ID="HeadLoginStatus" runat="server">Login</a> ]
+                    </AnonymousTemplate>
+                    <LoggedInTemplate>
+                         <span class="bold"><asp:LoginName ID="HeadLoginName" runat="server" /></span>&nbsp;[ <asp:LoginStatus ID="HeadLoginStatus" runat="server" LogoutAction="Redirect" LogoutText="Logout" LogoutPageUrl="~/Default.aspx" LoginText="Login" OnLoggingOut="HeadLoginStatus_LoggingOut" /> ]
+                    </LoggedInTemplate>
+                </asp:LoginView>
+                </span>
+            
+                </p>
+            
+            </div>
+               <span style="color: #FFFF00; font-size: x-large; font-style: normal;  font-weight: bold;">Online Grading System
+                   <br />
+               </span>
+            </div>
+            <div id="menuBar" class="auto-style1">
+                <div class="menu" style="width: auto">
+                    <ul>
+                        <li><a href="/Teacher/Home.aspx">Facilities for Teachers<!--[if IE 7]><!--></a><!--<![endif]--><!--[if lte IE 6]><table><tr><td><![endif]--><ul>
+                            <li><a href="/Teacher/Creation.aspx">Student Account Creation</a></li>
+                            <li><a href="/Teacher/Management.aspx">Management of the Assignments</a></li>
+                            <li><a href="/Teacher/Marking.aspx">Assignment Marking</a></li>
+                        </ul>
+                            <!--[if lte IE 6]></td></tr></table></a><![endif]-->
+                        </li>
+                        <li><a href="/Student/Home.aspx">Facilities for Students<!--[if IE 7]><!--></a><!--<![endif]--><!--[if lte IE 6]><table><tr><td><![endif]--><ul>
+                            <li><a href="/Student/Submission.aspx">Assignment Submission</a></li>
+                            <li><a href="/Student/Summary.aspx">Summary of the Assignments</a></li>
+                        </ul>
+                            <!--[if lte IE 6]></td></tr></table></a><![endif]-->
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="text" >
+            <asp:SiteMapPath ID="SiteMapPath1" runat="server" Font-Names="Verdana" 
+                    Font-Size="0.8em" PathSeparator=" : ">
+                <CurrentNodeStyle ForeColor="#333333" />
+                <NodeStyle Font-Bold="True" ForeColor="#7C6F57" />
+                <PathSeparatorStyle Font-Bold="True" ForeColor="#5D7B9D" />
+                <RootNodeStyle Font-Bold="True" ForeColor="#5D7B9D" />
+             </asp:SiteMapPath>
+            </div>
+            <div class="text" >
+                <asp:TreeView ID="TreeView1" runat="server" DataSourceID="SiteMapDataSource1" 
+                    onselectednodechanged="TreeView1_SelectedNodeChanged" Height="163px" Width="318px">
+                </asp:TreeView>
+                <asp:SiteMapDataSource ID="SiteMapDataSource1" runat="server" />
+            </div>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            
+            
+            </asp:ContentPlaceHolder>
+            <div id="footer" >
+                <br />
+                
+              Note: Copy right HE PEILIN 2020<br />
+                displayed in this website to realize Online Grading System.
+
+                
+            </div>
+        </div>
+    </form>
+</body>
+</html>
